@@ -1,0 +1,12 @@
+%h1 Entrar
+
+= form_tag usuarios_path, :method => :post do
+  = label :usuario, :nome, 'Nome'
+  = text_field :usuario, :nome
+
+  = label :usuario, :senha, 'Senha'
+  = password_field :usuario, :senha
+
+  = submit_tag 'Entrar'
+
+= link_to 'Cadastrar', new_usuario_path
