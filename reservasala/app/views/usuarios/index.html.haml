@@ -1,12 +1,36 @@
-%h1 Entrar
+%div{:class => "container"}
+  %div{:class => "card border-dark", :style => "width: 18rem"}
+    %h3{:class => "card-header"} Login
+    %div{:class => "card-body"}
+      = form_tag usuarios_path, :method => :post do
+        %div{:class => "form-group"}
+          = label :usuario, :nome, 'Nome'
+          = text_field :usuario, :nome
+        %div{:class => "form-group"}
+          = label :usuario, :senha, 'Senha'
+          = password_field :usuario, :senha
 
-= form_tag usuarios_path, :method => :post do
-  = label :usuario, :nome, 'Nome'
-  = text_field :usuario, :nome
+        = submit_tag 'Entrar', {:class => "btn btn-outline-success"}
 
-  = label :usuario, :senha, 'Senha'
-  = password_field :usuario, :senha
+      = link_to 'Cadastrar', new_usuario_path, {:class => "btn btn-outline-dark mt-2", "data-toggle" => "modal", "data-target" => "#cadastroModal"}
 
-  = submit_tag 'Entrar'
+  %div{:class => "modal fade", :id => "cadastroModal"}
+    %div{:class => "modal-dialog", "role" => "document"}
+      %div{:class => "modal-content"}
+        %div{:class => "modal-header"}
+          %h5{:class => "modal-title"} Cadastro de Usuário
+        %div{:class => "modal-body"}
+          = form_tag usuarios_path, :method => :post do
 
-= link_to 'Cadastrar', new_usuario_path
+            %div{:class => "form-group"}
+              = label :usuario, :nome, 'Nome'
+              = text_field :usuario, :nome, {:class => "form-control"}
+            %div{:class => "form-group"}
+              = label :usuario, :email, 'Email'
+              = email_field :usuario, :email, {:class => "form-control"}
+            %div{:class => "form-group"}
+              = label :usuario, :senha, 'Senha'
+              = password_field :usuario, :senha, {:class => "form-control"}
+
+
+            = submit_tag 'Cadastrar', {:class => "btn btn-outline-primary"}
