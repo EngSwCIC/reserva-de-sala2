@@ -4,6 +4,10 @@ class UsuariosController < ApplicationController
   end
 
   def new
-    @usuarios = Usuario.new
+
+  end
+
+  def create
+
   end
 end

@@ -9,9 +9,9 @@
 
 # Seed the RottenPotatoes DB with some movies.
 mais_usuarios = [
-    {:nome => 'André', :email => 'andre@email.com'},
-    {:nome => 'Pedro', :email => 'pedro@email.com'},
-    {:nome => 'Bruno', :email => 'bruno@email.com'}
+    {:nome => 'André', :email => 'andre@email.com', :senha => 'senha1'},
+    {:nome => 'Pedro', :email => 'pedro@email.com', :senha => 'senha2'},
+    {:nome => 'Bruno', :email => 'bruno@email.com', :senha => 'senha3'}
 ]
 
 mais_usuarios.each do |usuario|
