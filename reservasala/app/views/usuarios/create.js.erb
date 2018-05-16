@@ -1,0 +1,21 @@
+$('.invalid-feedback').html("")
+
+$('#cadastro').addClass('needs-validation')
+$('#nome').removeClass('is-invalid')
+$('#email').removeClass('is-invalid')
+$('#senha').removeClass('is-invalid')
+
+<% if @errorNome.any? %>
+  $('#nome').addClass('is-invalid')
+  $('#nomeFeed').append('<%= escape_javascript(@errorNome[0]) %>')
+<% end %>
+
+<% if @errorEmail.any? %>
+$('#email').addClass('is-invalid')
+$('#emailFeed').append('<%= escape_javascript(@errorEmail[0]) %>')
+<% end %>
+
+<% if @errorSenha.any? %>
+$('#senha').addClass('is-invalid')
+$('#senhaFeed').append('<%= escape_javascript(@errorSenha[0]) %>')
+<% end %>
