@@ -1,0 +1,44 @@
+%html
+  %head
+    %title Reservasala
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'https://code.jquery.com/jquery-3.3.1.slim.min.js', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+
+  %body
+    %nav{:class => "navbar navbar-expand-lg navbar-dark bg-dark"}
+      %div{:class => "container"}
+        %a{:class => "navbar-brand", :href => "#"}Reserva de Sala
+        %button{:class => "navbar-toggler", :type => "button", "data-toggle" => "collapse", "data-target" => "#navbarContent", "aria-controls" => "navbarContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation"}
+          %span{:class => "navbar-toggler-icon"}
+        %div{:class => "collapse navbar-collapse", :id => "navbarContent"}
+          %ul{:class => "navbar-nav mr-auto"}
+            %li{:class => "nav-item"}
+              %a{:class => "nav-link",:href => "#"}Nova Reserva
+          %ul{:class => "navbar-nav justify-content-end"}
+            %li{:class => "nav-item dropdown"}
+              %a{:class => "nav-link dropdown-toggle",:href => "#", :id => "navbarDropdown", :role => "button", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"}Usuario
+              %div{:class => "dropdown-menu dropdown-menu-right", "aria-labelledby" => "navbarDropdown"}
+                %a{:class => "dropdown-item",:href => "#"}Alterar Dados
+                %a{:class => "dropdown-item",:href => "#"}Visualizar Reservas
+
+    %div{:class => "container mt-3"}
+      %div{:class => "table-responsive"}
+        %table{:class => "table"}
+          %thead
+            %tr
+              %th{:scope => "col"}Sala
+              %th{:scope => "col"}Horarios
+              %th{:scope => "col"}...
+          %tbody
+            %tr
+              %td PAT AT 24
+              %td 12-18
+              %td
