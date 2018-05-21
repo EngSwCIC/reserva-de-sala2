@@ -15,9 +15,10 @@ ActiveRecord::Schema.define(version: 2018_05_09_035430) do
   create_table "usuarios", force: :cascade do |t|
     t.string "nome"
     t.string "email"
+    t.string "senha"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "senha"
+    t.index ["email"], name: "usuarios_email_unique", unique: true
   end
 
 end
