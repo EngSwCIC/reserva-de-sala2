@@ -4,6 +4,19 @@ $('#cadastro').addClass('needs-validation')
 $('#nome').removeClass('is-invalid')
 $('#email').removeClass('is-invalid')
 $('#senha').removeClass('is-invalid')
+$('#login').addClass('needs-validation')
+$('#nomeLogin').removeClass('is-invalid')
+$('#senhaLogin').removeClass('is-invalid')
+
+<% if @errorNomeLogin.any? %>
+$('#nomeLogin').addClass('is-invalid')
+$('#nomeLoginFeed').append('<%= escape_javascript(@errorNomeLogin[0]) %>')
+<% end %>
+
+<% if @errorSenhaLogin.any? %>
+$('#senhaLogin').addClass('is-invalid')
+$('#senhaLoginFeed').append('<%= escape_javascript(@errorSenhaLogin[0]) %>')
+<% end %>
 
 <% if @errorNome.any? %>
   $('#nome').addClass('is-invalid')

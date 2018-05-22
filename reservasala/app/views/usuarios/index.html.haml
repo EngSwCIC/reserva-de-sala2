@@ -1,13 +1,15 @@
 %div{:class => "card border-dark mx-auto", :style => "width: 18rem"}
   %h3{:class => "card-header"} Login
   %div{:class => "card-body"}
-    = form_tag usuarios_path, :method => :post do
+    = form_tag usuarios_path, :method => :post, :remote => true, :id => "login", :novalidate => "novalidate" do
       %div{:class => "form-group"}
         = label :usuario, :nome, 'Nome'
-        = text_field :usuario, :nome
+        = text_field :usuario, :nome, {:class => "form-control", :id => "nomeLogin"}
+        %div{:class => "invalid-feedback", :id => "nomeLoginFeed"}
       %div{:class => "form-group"}
         = label :usuario, :senha, 'Senha'
-        = password_field :usuario, :senha
+        = password_field :usuario, :senha, {:class => "form-control", :id => "senhaLogin"}
+        %div{:class => "invalid-feedback", :id => "senhaLoginFeed"}
 
       = submit_tag 'Entrar', {:class => "btn btn-outline-success"}
 
