@@ -17,7 +17,7 @@ class UsuariosController < ApplicationController
       @errorEmail = []
       @errorSenha = []
       if @login.present? && @login.senha == usuario_params[:senha]
-        redirect_to usuarios_path
+        redirect_to reservas_path
       else
         format.json
         format.js
