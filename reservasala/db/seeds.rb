@@ -8,6 +8,16 @@
 
 
 # Seed the RottenPotatoes DB with some movies.
+mais_salas = [
+    {:numero => 'AT-029'},
+    {:numero => 'BT-085'},
+    {:numero => 'BT-124'}
+]
+
+mais_salas.each do |sala|
+  Sala.create!(sala)
+end
+
 mais_usuarios = [
     {:nome => 'André', :email => 'andre@email.com', :senha => 'senha1'},
     {:nome => 'Pedro', :email => 'pedro@email.com', :senha => 'senha2'},
