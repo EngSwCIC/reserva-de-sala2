@@ -9,10 +9,21 @@ class UsuariosController < ApplicationController
 
   def create
     @usuario = Usuario.new(usuario_params)
+    @login = Usuario.find_by_nome(usuario_params[:nome])
     respond_to do |format|
+      @errorNomeLogin = []
+      @errorSenhaLogin = []
       @errorNome = []
       @errorEmail = []
       @errorSenha = []
+      if @login.present? && @login.senha == usuario_params[:senha]
+        redirect_to reservas_path
+      else
+        format.json
+        format.js
+        @errorNomeLogin.push("Login ou senha inválidos")
+        @errorSenhaLogin.push("Login ou senha inválidos")
+      end
       if @usuario.save
         format.js
         format.json
