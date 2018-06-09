@@ -31,14 +31,15 @@
 
     %div{:class => "container mt-3"}
       %div{:class => "table-responsive"}
-        %table{:class => "table"}
+        %table#salas{:class => "table"}
           %thead
             %tr
               %th{:scope => "col"}Prédio
               %th{:scope => "col"}Sala
               %th{:scope => "col"}Horários
           %tbody
-            %tr
-              %td PAT AT 24
-              %td 12-18
-              %td (linkar com lista de horários reservados)
+            - @salas.each do |sala|
+              %tr
+                %td= sala.numero
+                %td
+                %td
