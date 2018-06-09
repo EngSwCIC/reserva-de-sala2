@@ -6,4 +6,6 @@ class Usuario < ActiveRecord::Base
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create, message: "Informe um email válido"
 
   validates :senha, presence: {message: "Informe uma senha"}
+
+  has_many :reservas
 end

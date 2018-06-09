@@ -10,13 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_09_035430) do
+ActiveRecord::Schema.define(version: 2018_06_08_233823) do
+
+  create_table "horarios", force: :cascade do |t|
+    t.time "horario"
+  end
+
+  create_table "salas", force: :cascade do |t|
+    t.date "data"
+    t.string "materia"
+    t.string "turma"
+    t.integer "usuario_id"
+    t.integer "sala_id"
+    t.integer "horario_id"
+    t.index ["horario_id"], name: "index_reservas_on_horario_id"
+    t.index ["sala_id"], name: "index_reservas_on_sala_id"
+    t.index ["usuario_id"], name: "index_reservas_on_usuario_id"
+  end
+
+  create_table "salas", force: :cascade do |t|
+    t.string "predio"
+    t.string "numero"
+  end
 
   create_table "usuarios", force: :cascade do |t|
     t.string "nome"
     t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "senha"
   end
 
