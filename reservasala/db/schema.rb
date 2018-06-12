@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2018_06_08_233823) do
     t.time "horario"
   end
 
-  create_table "salas", force: :cascade do |t|
+  create_table "reservas", force: :cascade do |t|
     t.date "data"
     t.string "materia"
     t.string "turma"

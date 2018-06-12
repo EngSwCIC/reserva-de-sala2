@@ -1,6 +1,6 @@
 class CreateReservas < ActiveRecord::Migration[5.2]
   def change
-    create_table :salas do |t|
+    create_table :reservas do |t|
       t.date "data"
       t.string "materia"
       t.string "turma"
