@@ -1,0 +1,33 @@
+$('.invalid-feedback').html("")
+
+$('#cadastro').addClass('needs-validation')
+$('#materia').removeClass('is-invalid')
+$('#turma').removeClass('is-invalid')
+$('#sala').removeClass('is-invalid')
+$('#data').removeClass('is-invalid')
+$('#horario').removeClass('is-invalid')
+
+<% if @errorMateria.any? %>
+$('#materia').addClass('is-invalid')
+$('#materiaFeed').append('<%= escape_javascript(@errorMateria[0]) %>')
+<% end %>
+
+<% if @errorTurma.any? %>
+$('#turma').addClass('is-invalid')
+$('#turmaFeed').append('<%= escape_javascript(@errorTurma[0]) %>')
+<% end %>
+
+<% if @errorSala.any? %>
+$('#sala').addClass('is-invalid')
+$('#salaFeed').append('<%= escape_javascript(@errorSala[0]) %>')
+<% end %>
+
+<% if @errorData.any? %>
+$('#data').addClass('is-invalid')
+$('#dataFeed').append('<%= escape_javascript(@errorData[0]) %>')
+<% end %>
+
+<% if @errorHorario.any? %>
+$('#horario').addClass('is-invalid')
+$('#horarioFeed').append('<%= escape_javascript(@errorHorario[0]) %>')
+<% end %>

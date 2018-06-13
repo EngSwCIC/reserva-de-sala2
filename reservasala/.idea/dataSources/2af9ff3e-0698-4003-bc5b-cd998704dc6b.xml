@@ -59,7 +59,7 @@
     </column>
     <column id="21" parent="7" name="horario">
       <Position>2</Position>
-      <DataType>time|0</DataType>
+      <DataType>varchar|0</DataType>
     </column>
     <key id="22" parent="7">
       <ColNames>id</ColNames>

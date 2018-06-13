@@ -19,14 +19,14 @@ mais_salas.each do |sala|
 end
 
 mais_horarios = [
-    {:horario => Time.parse('8:00')},
-    {:horario => Time.parse('10:00')},
-    {:horario => Time.parse('12:00')},
-    {:horario => Time.parse('14:00')},
-    {:horario => Time.parse('16:00')},
-    {:horario => Time.parse('18:00')},
-    {:horario => Time.parse('20:00')},
-    {:horario => Time.parse('22:00')}
+    {:horario => '8:00'},
+    {:horario => '10:00'},
+    {:horario => '12:00'},
+    {:horario => '14:00'},
+    {:horario => '16:00'},
+    {:horario => '18:00'},
+    {:horario => '20:00'},
+    {:horario => '22:00'},
 ]
 
 mais_horarios.each do |horario|

@@ -13,33 +13,30 @@
 
 
   %body
-    %nav{:class => "navbar navbar-expand-lg navbar-dark bg-dark"}
-      %div{:class => "container"}
-        %a{:class => "navbar-brand", :href => "#"}Reserva de Sala
-        %button{:class => "navbar-toggler", :type => "button", "data-toggle" => "collapse", "data-target" => "#navbarContent", "aria-controls" => "navbarContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation"}
-          %span{:class => "navbar-toggler-icon"}
-        %div{:class => "collapse navbar-collapse", :id => "navbarContent"}
-          %ul{:class => "navbar-nav mr-auto"}
-            %li{:class => "nav-item"}
-              = link_to 'Nova Reserva', new_reserva_path, {:class => "nav-link"}
-          %ul{:class => "navbar-nav justify-content-end"}
-            %li{:class => "nav-item dropdown"}
-              %a{:class => "nav-link dropdown-toggle",:href => "#", :id => "navbarDropdown", :role => "button", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"}Usuario
-              %div{:class => "dropdown-menu dropdown-menu-right", "aria-labelledby" => "navbarDropdown"}
-                %a{:class => "dropdown-item",:href => "#"}Alterar Dados
-                %a{:class => "dropdown-item",:href => "#"}Visualizar Reservas
-
-    %div{:class => "container mt-3"}
-      %div{:class => "table-responsive"}
-        %table#salas{:class => "table"}
-          %thead
-            %tr
-              %th{:scope => "col"}Prédio
-              %th{:scope => "col"}Sala
-              %th{:scope => "col"}Horários
-          %tbody
-            - @salas.each do |sala|
-              %tr
-                %td= sala.predio
-                %td= sala.numero
-                %td Linkar à página de reservas
+    %div{:class => "container"}
+      %div{:class => "card"}
+        %div{:class => "card-header"}
+          %h5 Cadastro de Usuário
+        %div{:class => "card-body"}
+          = form_tag reservas_path, :method => :post, :remote => true, :id => "cadastro", :novalidate => "novalidate" do
+            %div{:class => "form-group", :id => "materiaDiv"}
+              = label :reserva, :materia, 'Matéria'
+              = text_field :reserva, :materia, {:class => "form-control", :id => "materia"}
+              %div{:class => "invalid-feedback", :id => "materiaFeed"}
+            %div{:class => "form-group", :id => "turmaDiv"}
+              = label :reserva, :turma, 'Turma'
+              = text_field :reserva, :turma, {:class => "form-control", :id => "turma"}
+              %div{:class => "invalid-feedback", :id => "turmaFeed"}
+            %div{:class => "form-group", :id => "salaDiv"}
+              = label :reserva, :sala, 'Sala'
+              = select :reserva, :sala, Sala.all.collect { |s| [s.numero, s.id] }, { include_blank: true } ,{:class => "custom-select", :id => "sala"}
+              %div{:class => "invalid-feedback", :id => "salaFeed"}
+            %div{:class => "form-group", :id => "dataDiv"}
+              = label :reserva, :data, 'Data'
+              = date_field :reserva, :data, {:class => "form-control", :id => "data"}
+              %div{:class => "invalid-feedback", :id => "dataFeed"}
+            %div{:class => "form-group", :id => "horarioDiv"}
+              = label :reserva, :horario, 'Horário'
+              = select :reserva, :horario, Horario.all.collect { |h| [h.horario, h.id] }, { include_blank: true } ,{:class => "custom-select", :id => "horario"}
+              %div{:class => "invalid-feedback", :id => "horarioFeed"}
+            = submit_tag 'Cadastrar', {:class => "btn btn-outline-primary", :id => "cadastrar"}

@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2018_06_08_233823) do
 
   create_table "horarios", force: :cascade do |t|
-    t.time "horario"
+    t.string "horario"
   end
 
   create_table "reservas", force: :cascade do |t|
