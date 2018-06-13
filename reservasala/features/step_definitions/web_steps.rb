@@ -83,7 +83,7 @@ When /^(?:|I )fill in the following:$/ do |fields|
 end
 
 When /^(?:|I )select "([^"]*)" from "([^"]*)"$/ do |value, field|
-  select(value, :from => field)
+  select value, from: field
 end
 
 When /^(?:|I )check "([^"]*)"$/ do |field|
@@ -228,6 +228,7 @@ Then /^the "([^"]*)" checkbox(?: within (.*))? should not be checked$/ do |label
 end
  
 Then /^(?:|I )should be on (.+)$/ do |page_name|
+  save_and_open_page
   current_path = URI.parse(current_url).path
   if current_path.respond_to? :should
     current_path.should == path_to(page_name)

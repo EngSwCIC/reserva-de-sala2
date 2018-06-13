@@ -9,6 +9,8 @@ class ReservasController < ActionController::Base
     permitted[:usuario] = Usuario.find_by_id(session[:current_user_id])
     @reserva = Reserva.new(permitted)
 
+    puts permitted
+
     respond_to do |format|
       @errorMateria = []
       @errorTurma = []
@@ -17,12 +19,13 @@ class ReservasController < ActionController::Base
       @errorHorario = []
 
       if @reserva.save
+        format.html { render :new }
         format.js
-        format.json
+
         flash[:success] = "Reserva feita com sucesso!"
         redirect_to salas_path
       else
-        format.json
+        format.html { render :new }
         format.js
         @reserva.errors.any?
         if (@reserva.errors["materia"] != nil)
