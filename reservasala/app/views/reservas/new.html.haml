@@ -29,8 +29,8 @@
               %div{:class => "invalid-feedback", :id => "turmaFeed"}
             %div{:class => "form-group", :id => "salaDiv"}
               = label :reserva, :sala, 'Sala'
-              -# = select :reserva, :sala, Sala.all.collect { |s| [s.numero,s.id] }, { include_blank: true} ,{:class => "custom-select", :id => "sala"}
-              = select :reserva, :sala, [['AT-029',1], ['AT-045',2]], { include_blank: true} ,{:class => "custom-select", :id => "sala"}
+              = select :reserva, :sala, Sala.all.collect { |s| [s.numero,s.id] }, { include_blank: true} ,{:class => "custom-select", :id => "sala"}
+
               %div{:class => "invalid-feedback", :id => "salaFeed"}
             %div{:class => "form-group", :id => "dataDiv"}
               = label :reserva, :data, 'Data'
@@ -38,7 +38,7 @@
               %div{:class => "invalid-feedback", :id => "dataFeed"}
             %div{:class => "form-group", :id => "horarioDiv"}
               = label :reserva, :horario, 'Horário'
-              = select :reserva, :horario, [['8:00',1]], { include_blank: true } ,{:class => "custom-select", :id => "horario"}
-              -#= select :reserva, :horario, Horario.all.collect { |h| [h.horario, h.id] }, { include_blank: true } ,{:class => "custom-select", :id => "horario"}
+
+              = select :reserva, :horario, Horario.all.collect { |h| [h.horario, h.id] }, { include_blank: true } ,{:class => "custom-select", :id => "horario"}
               %div{:class => "invalid-feedback", :id => "horarioFeed"}
             = submit_tag 'Cadastrar', {:class => "btn btn-outline-primary", :id => "cadastrar"}
