@@ -18,11 +18,15 @@ describe UsuariosController do
   describe 'trying to make login' do
     let(:pedro) { Usuario.find_by_nome('Pedro') }
     it 'should find the correct user' do
-      post :create, :params => {:usuario => {:nome => 'Pedro'}}, :format => :js
+      post :create, :params => {:usuario => {:nome => 'Pedro'}}, :xhr => true
       expect(assigns(:login)).to eq(pedro)
     end
+    it 'should not find this user' do
+      post :create, :params => {:usuario => {:nome => 'DAsasasas'}}, :xhr => true
+      expect(assigns(:login)).to eq(nil)
+    end
     it 'should redirect to salas index when matches login' do
-      post :create, :params => {:usuario => {:nome => 'Pedro', :senha => 'senha2'}}, :xhr => true
+      post :create, :params => {:usuario => {:nome => 'Pedro', :senha => 'senha2'}}, :format => :js
       expect(assigns(:login)).to eq(pedro)
     end
   end

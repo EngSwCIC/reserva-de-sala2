@@ -10,7 +10,6 @@ class UsuariosController < ApplicationController
   def create
     @usuario = Usuario.new(usuario_params)
     @login = Usuario.find_by_nome(usuario_params[:nome])
-    @teste = false
     respond_to do |format|
       @errorNomeLogin = []
       @errorSenhaLogin = []
@@ -18,7 +17,6 @@ class UsuariosController < ApplicationController
       @errorEmail = []
       @errorSenha = []
       if @login.present? && @login.senha == usuario_params[:senha]
-        @teste = true
         redirect_to salas_path
       else
         format.json
