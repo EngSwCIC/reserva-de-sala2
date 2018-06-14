@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   root :to => redirect('/usuarios')
   resources :salas
   root :to => redirect('/salas')
+
+  #testes
+  post '/usuarios/login'
 end
