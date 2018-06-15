@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root :to => redirect('/salas')
   resources :reservas
   root :to => redirect('/reservas')
+
 end

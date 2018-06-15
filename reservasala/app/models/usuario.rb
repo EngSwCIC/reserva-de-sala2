@@ -8,4 +8,5 @@ class Usuario < ActiveRecord::Base
   validates :senha, presence: {message: "Informe uma senha"}
 
   has_many :reservas
+
 end
