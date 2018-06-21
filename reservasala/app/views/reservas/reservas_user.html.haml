@@ -27,19 +27,28 @@
               %a{:class => "nav-link dropdown-toggle",:href => "#", :id => "navbarDropdown", :role => "button", "data-toggle" => "dropdown", "aria-haspopup" => "true", "aria-expanded" => "false"}#{@usuario.nome}
               %div{:class => "dropdown-menu dropdown-menu-right", "aria-labelledby" => "navbarDropdown"}
                 %a{:class => "dropdown-item",:href => "#"}Alterar Dados
-                = link_to 'Visualizar Reservas', reservas_user_path, {:class => "dropdown-item"}
+                %a{:class => "dropdown-item",:href => "#"}Visualizar Reservas
 
     %div{:class => "container mt-3"}
-      %div{:class => "table-responsive"}
+      = link_to 'Retornar à visualização de salas', salas_path, {class: "btn btn-outline-dark"}
+      %div{:class => "table-responsive mt-5"}
         %table#salas{:class => "table"}
           %thead
             %tr
+              %th{:scope => "col"}Matéria
+              %th{:scope => "col"}Turma
               %th{:scope => "col"}Prédio
-              %th{:scope => "col"}Sala
-              %th{:scope => "col"}Horários
+              %th{:scope => "col"}Número
+              %th{:scope => "col"}Data
+              %th{:scope => "col"}Horário
+              %th{:scope => "col"}
           %tbody
-            - @salas.each do |sala|
+            - @reservas_u.each do |reserva|
               %tr
-                %td= sala.predio
-                %td= sala.numero
-                %td Linkar à página de reservas
+                %td= reserva.materia
+                %td= reserva.turma
+                %td= reserva.sala.predio
+                %td= reserva.sala.numero
+                %td= reserva.data.strftime("%d/%m/%Y")
+                %td= reserva.horario.horario
+                %td= button_to 'Delete', reserva_path(reserva.id), {:method => :delete, :confirm => 'Você tem certeza?', class: "btn btn-danger"}

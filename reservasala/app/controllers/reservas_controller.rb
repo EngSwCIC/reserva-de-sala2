@@ -43,4 +43,17 @@ class ReservasController < ActionController::Base
       end
     end
   end
+
+  def reservas_user
+    id = session[:current_user_id]
+    @usuario = Usuario.find_by_id(id)
+    @reservas_u = Reserva.where(usuario_id: [id]).order(:data).order(:horario_id)
+  end
+
+  def destroy
+    @reserva = Reserva.find_by_id(params[:id])
+    @reserva.destroy
+    redirect_to reservas_user_path
+  end
+
 end

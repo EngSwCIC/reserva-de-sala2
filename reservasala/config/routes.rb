@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   root :to => redirect('/salas')
   resources :reservas
   root :to => redirect('/reservas')
-
+  match 'reservas_user' => 'reservas#reservas_user', :as => :reservas_user, via: [:get]
 end
