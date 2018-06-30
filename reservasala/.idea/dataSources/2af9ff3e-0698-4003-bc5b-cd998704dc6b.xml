@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="Rails reservasala: development">
-  <database-model serializer="dbm" rdbms="SQLITE" format-version="4.8">
-    <root id="1">
-      <ServerVersion>3.20.1</ServerVersion>
-    </root>
+  <database-model serializer="dbm" rdbms="SQLITE" format-version="4.7">
+    <root id="1"/>
     <schema id="2" parent="1" name="main">
       <Current>1</Current>
       <Visible>1</Visible>
@@ -25,21 +23,21 @@
     <table id="13" parent="2" name="usuarios"/>
     <column id="14" parent="6" name="key">
       <Position>1</Position>
-      <DataType>varchar|0s</DataType>
+      <DataType>varchar|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="15" parent="6" name="value">
       <Position>2</Position>
-      <DataType>varchar|0s</DataType>
+      <DataType>varchar|0</DataType>
     </column>
     <column id="16" parent="6" name="created_at">
       <Position>3</Position>
-      <DataType>datetime|0s</DataType>
+      <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="17" parent="6" name="updated_at">
       <Position>4</Position>
-      <DataType>datetime|0s</DataType>
+      <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <index id="18" parent="6" name="sqlite_autoindex_ar_internal_metadata_1">
@@ -55,13 +53,13 @@
     </key>
     <column id="20" parent="7" name="id">
       <Position>1</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="21" parent="7" name="horario">
       <Position>2</Position>
-      <DataType>varchar|0s</DataType>
+      <DataType>varchar|0</DataType>
     </column>
     <key id="22" parent="7">
       <ColNames>id</ColNames>
@@ -69,33 +67,33 @@
     </key>
     <column id="23" parent="8" name="id">
       <Position>1</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="24" parent="8" name="data">
       <Position>2</Position>
-      <DataType>date|0s</DataType>
+      <DataType>date|0</DataType>
     </column>
     <column id="25" parent="8" name="materia">
       <Position>3</Position>
-      <DataType>varchar|0s</DataType>
+      <DataType>varchar|0</DataType>
     </column>
     <column id="26" parent="8" name="turma">
       <Position>4</Position>
-      <DataType>varchar|0s</DataType>
+      <DataType>varchar|0</DataType>
     </column>
     <column id="27" parent="8" name="usuario_id">
       <Position>5</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
     </column>
     <column id="28" parent="8" name="sala_id">
       <Position>6</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
     </column>
     <column id="29" parent="8" name="horario_id">
       <Position>7</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
     </column>
     <index id="30" parent="8" name="index_reservas_on_usuario_id">
       <ColNames>usuario_id</ColNames>
@@ -115,17 +113,17 @@
     </key>
     <column id="34" parent="9" name="id">
       <Position>1</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="35" parent="9" name="predio">
       <Position>2</Position>
-      <DataType>varchar|0s</DataType>
+      <DataType>varchar|0</DataType>
     </column>
     <column id="36" parent="9" name="numero">
       <Position>3</Position>
-      <DataType>varchar|0s</DataType>
+      <DataType>varchar|0</DataType>
     </column>
     <key id="37" parent="9">
       <ColNames>id</ColNames>
@@ -133,7 +131,7 @@
     </key>
     <column id="38" parent="10" name="version">
       <Position>1</Position>
-      <DataType>varchar|0s</DataType>
+      <DataType>varchar|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <index id="39" parent="10" name="sqlite_autoindex_schema_migrations_1">
@@ -149,23 +147,23 @@
     </key>
     <column id="41" parent="11" name="type">
       <Position>1</Position>
-      <DataType>text|0s</DataType>
+      <DataType>text|0</DataType>
     </column>
     <column id="42" parent="11" name="name">
       <Position>2</Position>
-      <DataType>text|0s</DataType>
+      <DataType>text|0</DataType>
     </column>
     <column id="43" parent="11" name="tbl_name">
       <Position>3</Position>
-      <DataType>text|0s</DataType>
+      <DataType>text|0</DataType>
     </column>
     <column id="44" parent="11" name="rootpage">
       <Position>4</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
     </column>
     <column id="45" parent="11" name="sql">
       <Position>5</Position>
-      <DataType>text|0s</DataType>
+      <DataType>text|0</DataType>
     </column>
     <column id="46" parent="12" name="name">
       <Position>1</Position>
@@ -175,21 +173,21 @@
     </column>
     <column id="48" parent="13" name="id">
       <Position>1</Position>
-      <DataType>integer|0s</DataType>
+      <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="49" parent="13" name="nome">
       <Position>2</Position>
-      <DataType>varchar|0s</DataType>
+      <DataType>varchar|0</DataType>
     </column>
     <column id="50" parent="13" name="email">
       <Position>3</Position>
-      <DataType>varchar|0s</DataType>
+      <DataType>varchar|0</DataType>
     </column>
     <column id="51" parent="13" name="senha">
       <Position>4</Position>
-      <DataType>varchar|0s</DataType>
+      <DataType>varchar|0</DataType>
     </column>
     <key id="52" parent="13">
       <ColNames>id</ColNames>
