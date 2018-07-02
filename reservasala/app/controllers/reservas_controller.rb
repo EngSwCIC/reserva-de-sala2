@@ -50,6 +50,14 @@ class ReservasController < ActionController::Base
     @reservas_u = Reserva.where(usuario_id: [id]).order(:data).order(:horario_id)
   end
 
+  def reservas_sala
+    id = session[:current_user_id]
+    @usuario = Usuario.find_by_id(id)
+    sala_id = params[:id]
+    @sala = Sala.find_by_id(sala_id)
+    @reservas_s = Reserva.where(sala_id: [sala_id]).order(:data).order(:horario_id)
+  end
+
   def destroy
     @reserva = Reserva.find_by_id(params[:id])
     @reserva.destroy
