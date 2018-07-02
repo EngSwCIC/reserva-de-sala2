@@ -37,4 +37,32 @@ describe UsuariosController do
       expect(response).to redirect_to('/usuarios')
     end
   end
+
+  describe 'creating a new user' do
+    it 'should create a new user' do
+      post :create, :params => {:usuario => {:nome => 'teste', :senha => 'senha_teste', :email => 'teste@email.com'}}, :format => :js
+      us = Usuario.find_by_nome('teste')
+      expect(assigns(:usuario)).to eq(us)
+    end
+    it 'should redirect to usuarios index when created' do
+      post :create, :params => {:usuario => {:nome => 'teste', :senha => 'senha_teste'}}, :format => :js
+
+      expect(response).to redirect_to('/usuarios')
+    end
+    it 'should require field senha' do
+      post :create, :params => {:usuario => {:nome => 'teste2', :email => 'teste@email.com'}}, :format => :js
+      us = Usuario.find_by_nome('teste2')
+      expect(assigns(:usuario)).to_not eq(us)
+    end
+    it 'should require field nome' do
+      post :create, :params => {:usuario => {:senha => 'teste_senha', :email => 'teste@email.com'}}, :format => :js
+      us = Usuario.find_by_email('teste@email.com')
+      expect(assigns(:usuario)).to_not eq(us)
+    end
+    it 'should require field email' do
+      post :create, :params => {:usuario => {:nome => 'teste2', :senha => 'teste_senha'}}, :format => :js
+      us = Usuario.find_by_nome('teste2')
+      expect(assigns(:usuario)).to_not eq(us)
+    end
+  end
 end
