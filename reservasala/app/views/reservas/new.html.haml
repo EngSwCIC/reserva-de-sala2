@@ -39,4 +39,6 @@
               = label :reserva, :horario, 'Horário'
               = select :reserva, :horario, Horario.all.collect { |h| [h.horario, h.id] }, { include_blank: true } ,{:class => "custom-select", :id => "horario"}
               %div{:class => "invalid-feedback", :id => "horarioFeed"}
-            = submit_tag 'Cadastrar', {:class => "btn btn-outline-primary", :id => "cadastrar"}
+            %div{:class => "float-right"}
+              = link_to 'Voltar', salas_path, {class: "btn btn-outline-dark"}
+              = submit_tag 'Cadastrar', {:class => "btn btn-outline-primary", :id => "cadastrar"}

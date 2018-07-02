@@ -15,7 +15,7 @@
   %body
     %nav{:class => "navbar navbar-expand-lg navbar-dark bg-dark"}
       %div{:class => "container"}
-        %a= link_to 'Reserva de Sala', salas_path, {:class => "navbar-brand"}
+        %a{:class => "navbar-brand", :href => "#"}Reserva de Sala
         %button{:class => "navbar-toggler", :type => "button", "data-toggle" => "collapse", "data-target" => "#navbarContent", "aria-controls" => "navbarContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation"}
           %span{:class => "navbar-toggler-icon"}
         %div{:class => "collapse navbar-collapse", :id => "navbarContent"}
@@ -34,20 +34,20 @@
         %table#salas{:class => "table"}
           %thead
             %tr
+              %th{:scope => "col"}Responsável
               %th{:scope => "col"}Matéria
               %th{:scope => "col"}Turma
               %th{:scope => "col"}Prédio
               %th{:scope => "col"}Número
               %th{:scope => "col"}Data
               %th{:scope => "col"}Horário
-              %th{:scope => "col"}
           %tbody
-            - @reservas_u.each do |reserva|
+            - @reservas_s.each do |reserva|
               %tr
+                %td= reserva.usuario.nome
                 %td= reserva.materia
                 %td= reserva.turma
                 %td= reserva.sala.predio
                 %td= reserva.sala.numero
                 %td= reserva.data.strftime("%d/%m/%Y")
                 %td= reserva.horario.horario
-                %td= button_to 'Delete', reserva_path(reserva.id), {:method => :delete, :confirm => 'Você tem certeza?', class: "btn btn-danger"}
