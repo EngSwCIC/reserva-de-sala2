@@ -20,18 +20,17 @@ class UsuariosController < ApplicationController
         session[:current_user_id] = @login.id
         redirect_to salas_path
       else
-        format.json
+        format.html
         format.js
         @errorNomeLogin.push("Login ou senha inválidos")
         @errorSenhaLogin.push("Login ou senha inválidos")
       end
+
       if @usuario.save
-        format.js
-        format.json
         flash[:success] = "Usuario cadastrado com sucesso!"
         redirect_to usuarios_path
       else
-        format.json
+        format.html
         format.js
         @usuario.errors.any?
         if (@usuario.errors["nome"] != nil)

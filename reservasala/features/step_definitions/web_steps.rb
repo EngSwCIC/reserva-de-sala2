@@ -83,7 +83,7 @@ When /^(?:|I )fill in the following:$/ do |fields|
 end
 
 When /^(?:|I )select "([^"]*)" from "([^"]*)"$/ do |value, field|
-  select value, from: field
+  select(value, :from => field)
 end
 
 When /^(?:|I )check "([^"]*)"$/ do |field|
