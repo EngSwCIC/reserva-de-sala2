@@ -1,0 +1,143 @@
+{
+  "RSpec": {
+    "coverage": {
+      "D:/Documents/reserva-de-sala2/reservasala/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "D:/Documents/reserva-de-sala2/reservasala/app/controllers/usuarios_controller.rb": [
+        1,
+        1,
+        2,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        1,
+        null,
+        3,
+        3,
+        3,
+        3,
+        null,
+        4,
+        0,
+        0,
+        0,
+        0,
+        null,
+        4,
+        4,
+        4,
+        4,
+        4,
+        null,
+        4,
+        4,
+        null,
+        4,
+        4,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        11,
+        null,
+        null
+      ],
+      "D:/Documents/reserva-de-sala2/reservasala/app/controllers/application_controller.rb": [
+        1,
+        null
+      ],
+      "D:/Documents/reserva-de-sala2/reservasala/app/models/usuario.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "D:/Documents/reserva-de-sala2/reservasala/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "D:/Documents/reserva-de-sala2/reservasala/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "D:/Documents/reserva-de-sala2/reservasala/app/controllers/reservas_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        null,
+        0
+      ],
+      "D:/Documents/reserva-de-sala2/reservasala/app/controllers/salas_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        null,
+        0
+      ],
+      "D:/Documents/reserva-de-sala2/reservasala/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "D:/Documents/reserva-de-sala2/reservasala/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "D:/Documents/reserva-de-sala2/reservasala/app/models/application_record.rb": [
+        0,
+        0,
+        0
+      ],
+      "D:/Documents/reserva-de-sala2/reservasala/app/models/horario.rb": [
+        0,
+        0,
+        0
+      ],
+      "D:/Documents/reserva-de-sala2/reservasala/app/models/reserva.rb": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "D:/Documents/reserva-de-sala2/reservasala/app/models/sala.rb": [
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1530808298
+  }
+}
