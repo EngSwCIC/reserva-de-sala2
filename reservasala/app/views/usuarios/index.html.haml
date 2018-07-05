@@ -1,7 +1,7 @@
 %div{:class => "card border-dark mx-auto", :style => "width: 18rem"}
   %h3{:class => "card-header"} Login
   %div{:class => "card-body"}
-    = form_tag usuarios_path, :method => :post, :remote => true, :id => "login", :novalidate => "novalidate" do
+    = form_tag usuarios_path, :method => :post, :remote => true, :id => "login", :novalidate => "novalidate", :html => { "data-type" => :js } do
       %div{:class => "form-group"}
         = label :usuario, :nome, 'Nome'
         = text_field :usuario, :nome, {:class => "form-control", :id => "nomeLogin"}
@@ -11,9 +11,9 @@
         = password_field :usuario, :senha, {:class => "form-control", :id => "senhaLogin"}
         %div{:class => "invalid-feedback", :id => "senhaLoginFeed"}
 
-      = submit_tag 'Entrar', {:class => "btn btn-outline-success"}
+      = submit_tag 'Entrar', {:class => "btn btn-outline-success", :id => "entrar"}
 
-    = link_to 'Cadastrar', new_usuario_path, {:class => "btn btn-outline-dark mt-2", "data-toggle" => "modal", "data-target" => "#cadastroModal"}
+    = link_to 'Cadastrar', new_usuario_path, {:class => "btn btn-outline-dark mt-2", "data-toggle" => "modal", "data-target" => "#cadastroModal", :id => "cadastrarNovo"}
 
 %div{:class => "modal fade", :id => "cadastroModal"}
   %div{:class => "modal-dialog", "role" => "document"}
@@ -21,7 +21,7 @@
       %div{:class => "modal-header"}
         %h5{:class => "modal-title"} Cadastro de Usuário
       %div{:class => "modal-body"}
-        = form_tag usuarios_path, :method => :post, :remote => true, :id => "cadastro", :novalidate => "novalidate" do
+        = form_tag usuarios_path, :method => :post, :remote => true, :id => "cadastro", :novalidate => "novalidate", :html => { "data-type" => :js } do
           %div{:class => "form-group", :id => "nomeDiv"}
             = label :usuario, :nome, 'Nome'
             = text_field :usuario, :nome, {:class => "form-control", :id => "nome"}
@@ -35,4 +35,4 @@
             = password_field :usuario, :senha, {:class => "form-control", :id => "senha"}
             %div{:class => "invalid-feedback", :id => "senhaFeed"}
 
-          = submit_tag 'Cadastrar', {:class => "btn btn-outline-primary", :id => "cadastrar"}
+          = submit_tag 'Cadastrar', {:class => "btn btn-outline-primary", :id => "cadastrar", :remote => true}

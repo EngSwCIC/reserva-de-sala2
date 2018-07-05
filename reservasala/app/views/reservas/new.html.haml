@@ -1,6 +1,6 @@
 %html
   %head
-    %title Reservasala
+    %title Nova Reserva
     = csrf_meta_tags
     = csp_meta_tag
 
@@ -18,7 +18,7 @@
         %div{:class => "card-header"}
           %h5 Cadastro de Usuário
         %div{:class => "card-body"}
-          = form_tag reservas_path, :method => :post, :remote => true, :id => "cadastro", :novalidate => "novalidate" do
+          = form_tag reservas_path, :method => :post, :remote => true, :id => "cadastro", :novalidate => "novalidate", :html => { "data-type" => :js } do
             %div{:class => "form-group", :id => "materiaDiv"}
               = label :reserva, :materia, 'Matéria'
               = text_field :reserva, :materia, {:class => "form-control", :id => "materia"}
@@ -29,7 +29,8 @@
               %div{:class => "invalid-feedback", :id => "turmaFeed"}
             %div{:class => "form-group", :id => "salaDiv"}
               = label :reserva, :sala, 'Sala'
-              = select :reserva, :sala, Sala.all.collect { |s| [s.numero, s.id] }, { include_blank: true } ,{:class => "custom-select", :id => "sala"}
+              = select :reserva, :sala, Sala.all.collect { |s| [s.numero,s.id] }, { include_blank: true} ,{:class => "custom-select", :id => "sala"}
+
               %div{:class => "invalid-feedback", :id => "salaFeed"}
             %div{:class => "form-group", :id => "dataDiv"}
               = label :reserva, :data, 'Data'
@@ -37,6 +38,7 @@
               %div{:class => "invalid-feedback", :id => "dataFeed"}
             %div{:class => "form-group", :id => "horarioDiv"}
               = label :reserva, :horario, 'Horário'
+
               = select :reserva, :horario, Horario.all.collect { |h| [h.horario, h.id] }, { include_blank: true } ,{:class => "custom-select", :id => "horario"}
               %div{:class => "invalid-feedback", :id => "horarioFeed"}
             %div{:class => "float-right"}

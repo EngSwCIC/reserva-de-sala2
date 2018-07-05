@@ -41,4 +41,4 @@
               %tr
                 %td= sala.predio
                 %td= sala.numero
-                %td= link_to 'Visualizar', reservas_sala_path(sala.id)
+                %td= link_to 'Visualizar', reservas_sala_path(sala.id), {:id => "visualizar#{sala.id}"}

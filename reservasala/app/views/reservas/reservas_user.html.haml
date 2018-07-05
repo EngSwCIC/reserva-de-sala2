@@ -43,11 +43,11 @@
               %th{:scope => "col"}
           %tbody
             - @reservas_u.each do |reserva|
-              %tr
+              %tr{ id: "tr#{reserva.id}"}
                 %td= reserva.materia
                 %td= reserva.turma
                 %td= reserva.sala.predio
                 %td= reserva.sala.numero
                 %td= reserva.data.strftime("%d/%m/%Y")
                 %td= reserva.horario.horario
-                %td= button_to 'Delete', reserva_path(reserva.id), {:method => :delete, :confirm => 'Você tem certeza?', class: "btn btn-danger"}
+                %td= button_to 'Delete', reserva_path(reserva.id), {:method => :delete, :confirm => 'Você tem certeza?', class: "btn btn-danger", id: "delete#{reserva.id}"}

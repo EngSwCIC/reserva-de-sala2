@@ -22,8 +22,14 @@ module NavigationHelpers
     when /^the login\s?page$/
       '/usuarios'
 
+    when /^the sala\s?page$/
+      '/reservas/sala/1'
+
     when /^the error reservas\s?page$/
       '/reservas'
+
+    when /^the reserva do usuario\s?page$/
+      '/reservas_user'
 
     else
       begin

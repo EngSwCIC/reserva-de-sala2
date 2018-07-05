@@ -1,4 +1,4 @@
-Feature: User can manually add reserva
+Feature: Usuario pode fazer uma reserva
 
   Scenario: Fazer uma reserva válida - Happy Path
     Given I am on the login page
@@ -15,6 +15,9 @@ Feature: User can manually add reserva
     And I select "8:00" from "horario"
     When I press "cadastrar"
     Then I should be on the home page
+    When I follow "Visualizar Reservas"
+    Then I should be on the reserva do usuario page
+    And I should see "Organizacao e Arquitetura de Computadores B PAT - Pavilhão Anísio Teixeira AT-029 11/04/2018 8:00"
 
   Scenario: Fazer uma reserva válida - Sad Path
     Given I am on the login page
